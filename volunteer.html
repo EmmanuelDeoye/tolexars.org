@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Join as Volunteer - Tolexars Therapy Services</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/volunteers.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+    <script src="assets/js/configure.js"></script>
+</head>
+<body>
+    <!--===== HEADER =====-->
+    <header class="l-header">
+        <nav class="nav bd-grid">
+            <div class="container">
+                <img src="assets/img/brand.png" alt="logo" class="logo">
+            </div>
+            <div class="nav__menu" id="nav-menu">
+                <ul class="nav__list">
+                    <li class="nav__item"><a href="index.html" class="nav__link">Home</a></li>
+                    <li class="nav__item"><a href="index.html#work" class="nav__link">Our Services</a></li>
+                    <li class="nav__item"><a href="gallery.html" class="nav__link">Gallery</a></li>
+                    <li class="nav__item"><a href="volunteer.html" class="nav__link active-link">Volunteers</a></li>
+                    <li class="nav__item"><a href="team.html" class="nav__link">Our team</a></li>
+                    <li class="nav__item"><a href="testimonials.html" class="nav__link">Testimonials</a></li>
+                    <li class="nav__item"><a href="index.html#contact" class="nav__link">Contact</a></li>
+                </ul>
+            </div>
+            <div class="nav__toggle" id="nav-toggle">
+                <i class='bx bx-menu'></i>
+            </div>
+        </nav>
+    </header>
+
+    <main class="l-main">
+        <!--===== VOLUNTEER FORM =====-->
+        <section class="volunteer-form section">
+            <div class="volunteer-form__container bd-grid">
+                <!-- Form Header -->
+                <div class="volunteer-header">
+                    <h1 class="section-title">General Volunteer Interest Form</h1>
+                    <p class="volunteer-subtitle">Thank you for your interest in volunteering with Tolexars Therapy Services 💙</p>
+                    <p class="volunteer-note">This form is short and easy. No experience is required.</p>
+                </div>
+
+                <!-- Form Content -->
+                <form id="volunteerForm" class="volunteer-form__content">
+                    <!-- Success Message (Hidden by default) -->
+                    <div id="successMessage" class="success-message" style="display: none;">
+                        <div class="success-icon">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                        <h2>Thank you for choosing to make a difference 🌱</h2>
+                        <p>We'll contact you with next steps and orientation details.</p>
+                        <a href="index.html" class="button button--success">Return to Home</a>
+                    </div>
+
+                    <!-- Form Sections (Visible by default) -->
+                    <div id="formSections">
+                        <!-- Section 1: Basic Details -->
+                        <div class="form-section">
+                            <div class="section-header">
+                                <div class="section-number">1</div>
+                                <h3 class="section-title">Basic Details</h3>
+                            </div>
+                            <div class="form-group">
+                                <label for="fullName" class="form-label">
+                                    <i class="fas fa-user"></i> Full Name *
+                                </label>
+                                <input type="text" id="fullName" name="fullName" class="form-input" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone" class="form-label">
+                                    <i class="fas fa-phone"></i> Phone Number (WhatsApp preferred) *
+                                </label>
+                                <input type="tel" id="phone" name="phone" class="form-input" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email" class="form-label">
+                                    <i class="fas fa-envelope"></i> Email Address (optional)
+                                </label>
+                                <input type="email" id="email" name="email" class="form-input">
+                            </div>
+                            <div class="form-group">
+                                <label for="location" class="form-label">
+                                    <i class="fas fa-map-marker-alt"></i> City / State *
+                                </label>
+                                <input type="text" id="location" name="location" class="form-input" required>
+                            </div>
+                        </div>
+
+                        <!-- Section 2: How Would You Like to Help? -->
+                        <div class="form-section">
+                            <div class="section-header">
+                                <div class="section-number">2</div>
+                                <h3 class="section-title">How Would You Like to Help?</h3>
+                                <p class="section-subtitle">(Select any that interest you)</p>
+                            </div>
+                            <div class="checkbox-group">
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="helpOptions[]" value="supporting">
+                                    <span class="checkbox-custom"></span>
+                                    <span class="checkbox-text">Supporting children or adults with special needs (non-clinical)</span>
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="helpOptions[]" value="assisting">
+                                    <span class="checkbox-custom"></span>
+                                    <span class="checkbox-text">Assisting during therapy sessions or classes</span>
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="helpOptions[]" value="community">
+                                    <span class="checkbox-custom"></span>
+                                    <span class="checkbox-text">Community outreach & awareness</span>
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="helpOptions[]" value="office">
+                                    <span class="checkbox-custom"></span>
+                                    <span class="checkbox-text">Office / admin support</span>
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="helpOptions[]" value="media">
+                                    <span class="checkbox-custom"></span>
+                                    <span class="checkbox-text">Media, photography, or content creation</span>
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="helpOptions[]" value="socialMedia">
+                                    <span class="checkbox-custom"></span>
+                                    <span class="checkbox-text">Social media support</span>
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="helpOptions[]" value="fundraising">
+                                    <span class="checkbox-custom"></span>
+                                    <span class="checkbox-text">Fundraising or events</span>
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="helpOptions[]" value="notSure">
+                                    <span class="checkbox-custom"></span>
+                                    <span class="checkbox-text">I'm not sure yet — I'm open to learning</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Section 3: Availability -->
+                        <div class="form-section">
+                            <div class="section-header">
+                                <div class="section-number">3</div>
+                                <h3 class="section-title">Availability</h3>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label class="form-label">
+                                    <i class="fas fa-calendar-alt"></i> Days available *
+                                </label>
+                                <div class="radio-group">
+                                    <label class="radio-label">
+                                        <input type="radio" name="daysAvailable" value="weekdays" required>
+                                        <span class="radio-custom"></span>
+                                        <span class="radio-text">Weekdays</span>
+                                    </label>
+                                    <label class="radio-label">
+                                        <input type="radio" name="daysAvailable" value="weekends">
+                                        <span class="radio-custom"></span>
+                                        <span class="radio-text">Weekends</span>
+                                    </label>
+                                    <label class="radio-label">
+                                        <input type="radio" name="daysAvailable" value="flexible">
+                                        <span class="radio-custom"></span>
+                                        <span class="radio-text">Flexible</span>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-label">
+                                    <i class="fas fa-clock"></i> Time available *
+                                </label>
+                                <div class="radio-group">
+                                    <label class="radio-label">
+                                        <input type="radio" name="timeAvailable" value="morning" required>
+                                        <span class="radio-custom"></span>
+                                        <span class="radio-text">Morning</span>
+                                    </label>
+                                    <label class="radio-label">
+                                        <input type="radio" name="timeAvailable" value="afternoon">
+                                        <span class="radio-custom"></span>
+                                        <span class="radio-text">Afternoon</span>
+                                    </label>
+                                    <label class="radio-label">
+                                        <input type="radio" name="timeAvailable" value="any">
+                                        <span class="radio-custom"></span>
+                                        <span class="radio-text">Any</span>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-label">
+                                    <i class="fas fa-history"></i> How often can you volunteer? *
+                                </label>
+                                <div class="radio-group">
+                                    <label class="radio-label">
+                                        <input type="radio" name="frequency" value="occasionally" required>
+                                        <span class="radio-custom"></span>
+                                        <span class="radio-text">Occasionally</span>
+                                    </label>
+                                    <label class="radio-label">
+                                        <input type="radio" name="frequency" value="onceWeekly">
+                                        <span class="radio-custom"></span>
+                                        <span class="radio-text">Once a week</span>
+                                    </label>
+                                    <label class="radio-label">
+                                        <input type="radio" name="frequency" value="flexible">
+                                        <span class="radio-custom"></span>
+                                        <span class="radio-text">Flexible / as needed</span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Section 4: About You -->
+                        <div class="form-section">
+                            <div class="section-header">
+                                <div class="section-number">4</div>
+                                <h3 class="section-title">About You (Optional)</h3>
+                            </div>
+                            <div class="form-group">
+                                <label for="occupation" class="form-label">
+                                    Are you a student, working professional, or other?
+                                </label>
+                                <input type="text" id="occupation" name="occupation" class="form-input">
+                            </div>
+                            <div class="form-group">
+                                <label for="skills" class="form-label">
+                                    Any skills, hobbies, or interests you'd like to share? (Optional)
+                                </label>
+                                <textarea id="skills" name="skills" class="form-textarea" rows="3"></textarea>
+                            </div>
+                        </div>
+
+                        <!-- Section 5: Why Volunteer -->
+                        <div class="form-section">
+                            <div class="section-header">
+                                <div class="section-number">5</div>
+                                <h3 class="section-title">Why Do You Want to Volunteer With Us?</h3>
+                                <p class="section-subtitle">(One or two lines is fine 😊)</p>
+                            </div>
+                            <div class="form-group">
+                                <textarea id="motivation" name="motivation" class="form-textarea" rows="4" required></textarea>
+                            </div>
+                        </div>
+
+                        <!-- Section 6: Agreement -->
+                        <div class="form-section">
+                            <div class="section-header">
+                                <div class="section-number">6</div>
+                                <h3 class="section-title">Simple Volunteer Agreement</h3>
+                            </div>
+                            <div class="form-group">
+                                <label class="checkbox-label agreement">
+                                    <input type="checkbox" id="agreement" name="agreement" required>
+                                    <span class="checkbox-custom"></span>
+                                    <span class="checkbox-text">I agree to be respectful, kind, and maintain confidentiality while volunteering with Tolexars Therapy Services.</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Section 7: Contact Method -->
+                        <div class="form-section">
+                            <div class="section-header">
+                                <div class="section-number">7</div>
+                                <h3 class="section-title">Preferred Contact Method *</h3>
+                            </div>
+                            <div class="form-group">
+                                <div class="radio-group">
+                                    <label class="radio-label">
+                                        <input type="radio" name="contactMethod" value="whatsapp" required>
+                                        <span class="radio-custom"></span>
+                                        <span class="radio-text">WhatsApp</span>
+                                    </label>
+                                    <label class="radio-label">
+                                        <input type="radio" name="contactMethod" value="phoneCall">
+                                        <span class="radio-custom"></span>
+                                        <span class="radio-text">Phone Call</span>
+                                    </label>
+                                    <label class="radio-label">
+                                        <input type="radio" name="contactMethod" value="email">
+                                        <span class="radio-custom"></span>
+                                        <span class="radio-text">Email</span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Submit Button -->
+                        <div class="form-section submit-section">
+                            <button type="submit" class="button button--submit" id="submitBtn">
+                                <i class="fas fa-paper-plane"></i> Submit Volunteer Application
+                            </button>
+                            <p class="form-note">We'll review your application and contact you soon!</p>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <!--===== FOOTER =====-->
+    <footer class="footer">
+        <div class="footer__container bd-grid">
+            <div class="footer__data">
+                <h2 class="footer__title">Finding independence in every action</h2>
+                <p class="footer__description">Providing quality therapy services to enhance your well-being.</p>
+            </div>
+            <div class="footer__data">
+                <h2 class="footer__subtitle">Contact Us</h2>
+                <p class="footer__info"><i class='bx bx-phone footer__icon-info'></i> +234 9065038786</p>
+                <p class="footer__info"><i class='bx bx-envelope footer__icon-info'></i> tolexars@gmail.com</p>
+            </div>
+            <div class="footer__data">
+                <h2 class="footer__subtitle">Quick Links</h2>
+                <ul>
+                    <li><a href="index.html" class="footer__link">Home</a></li>
+                    <li><a href="volunteer.html" class="footer__link">Volunteer</a></li>
+                    <li><a href="team.html" class="footer__link">Our team</a></li>
+                    <li><a href="testimonials.html" class="footer__link">Testimonials</a></li>
+                </ul>
+            </div>
+        </div>
+        <p class="footer__copy">&#169; 2025 Tolexars Therapy Services. All rights reserved.</p>
+    </footer>
+
+    <!--===== MAIN JS =====-->
+    <script src="assets/js/configure.js"></script>
+    
+    <script src="assets/js/volunteers.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

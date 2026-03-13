@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Link to existing styles -->
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <!-- About page specific styles -->
+    <link rel="stylesheet" href="assets/css/about.css">
+    
+    <!-- Existing icons -->
+    <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <title>About Us - Tolexars Therapy Services</title>
+</head>
+<body>
+    <!--===== HEADER =====-->
+    <header class="l-header">
+        <nav class="nav bd-grid">
+            <div class="container">
+                <a href="index.html">
+                    <img src="assets/img/brand.png" alt="Tolexars logo" class="logo">
+                </a>
+            </div>
+
+            <div class="nav__menu" id="nav-menu">
+                <ul class="nav__list">
+                    <li class="nav__item"><a href="index.html" class="nav__link">Home</a></li>
+                    
+                    <!-- About Dropdown -->
+                    <li class="nav__item nav__item--dropdown active">
+                        <a href="#" class="nav__link dropdown-toggle active-link">
+                            About Us <i class='bx bx-chevron-down dropdown-icon'></i>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="about.html#story" class="dropdown-item active-link">Our Story</a></li>
+                            <li><a href="about.html#mission-vision" class="dropdown-item">Mission & Vision</a></li>
+                            <li><a href="about.html#team" class="dropdown-item">Our Team</a></li>
+                            <li><a href="about.html#values" class="dropdown-item">Our Values</a></li>
+                        </ul>
+                    </li>
+                    
+                    <!-- Services Dropdown -->
+                    <li class="nav__item nav__item--dropdown">
+                        <a href="#work" class="nav__link dropdown-toggle">
+                            Our Work <i class='bx bx-chevron-down dropdown-icon'></i>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="index.html#work" class="dropdown-item">Our Services</a></li>
+                            <li><a href="index.html#programs" class="dropdown-item">Our Programs</a></li>
+                            <li><a href="gallery.html" class="dropdown-item">Gallery</a></li>
+                            <li><a href="testimonials.html" class="dropdown-item">Testimonials</a></li>
+                        </ul>
+                    </li>
+                    
+                    <!-- Get Involved Dropdown -->
+                    <li class="nav__item nav__item--dropdown">
+                        <a href="#" class="nav__link dropdown-toggle">
+                            Get Involved <i class='bx bx-chevron-down dropdown-icon'></i>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="volunteer.html" class="dropdown-item">Volunteer</a></li>
+                            <li><a href="professional-registration.html" class="dropdown-item">Join as Professional</a></li>
+                            <li><a href="index.html#partners" class="dropdown-item">Partnership</a></li>
+                        </ul>
+                    </li>
+                    
+                    <li class="nav__item"><a href="index.html#contact" class="nav__link">Contact</a></li>
+                </ul>
+                
+                <!-- Mobile Menu Close Button -->
+                <div class="nav__close" id="nav-close">
+                    <i class='bx bx-x'></i>
+                </div>
+            </div>
+
+            <!-- Mobile Menu Overlay -->
+            <div class="nav__overlay" id="nav-overlay"></div>
+
+            <div class="nav__toggle" id="nav-toggle">
+                <i class='bx bx-menu'></i>
+            </div>
+        </nav>
+    </header>
+
+    <main class="l-main">
+        <!--===== HERO SECTION =====-->
+        <section class="about-hero section" id="about-hero">
+            <div class="about-hero__container bd-grid">
+                <div class="about-hero__content">
+                    <h1 class="about-hero__title">Our Journey of <span class="about-hero__highlight">Hope & Healing</span></h1>
+                    <p class="about-hero__subtitle">Transforming lives through compassionate therapy services since 2022</p>
+                    <div class="about-hero__stats">
+                        <div class="hero-stat">
+                            <span class="hero-stat__number" data-count="700">0</span>
+                            <span class="hero-stat__label">Lives Transformed</span>
+                        </div>
+                        <div class="hero-stat">
+                            <span class="hero-stat__number" data-count="13">0</span>
+                            <span class="hero-stat__label">Communities Served</span>
+                        </div>
+                        <div class="hero-stat">
+                            <span class="hero-stat__number" data-count="20">0</span>
+                            <span class="hero-stat__label">Dedicated Therapists</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-hero__image">
+                    <img src="assets/img/reach.jpg" alt="Tolexars Therapy Team" loading="lazy">
+                    <div class="hero-image__overlay"></div>
+                </div>
+            </div>
+        </section>
+
+        <!--===== OUR STORY =====-->
+        <section class="our-story section" id="story">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">Our Beginning</span>
+                    <h2 class="section-title">The Tolexars Story</h2>
+                    <p class="section-subtitle">A journey from vision to reality</p>
+                </div>
+
+                <div class="timeline">
+                    <!-- Timeline Item 1 -->
+                    <div class="timeline-item">
+                        <div class="timeline-date">2022</div>
+                        <div class="timeline-content">
+                            <div class="timeline-image">
+                                <img src="assets/img/blue.jpg" alt="Founding moment" loading="lazy">
+                            </div>
+                            <div class="timeline-text">
+                                <h3>The Spark of Inspiration</h3>
+                                <p>On September 6, 2022, Tolexars Therapy Services was born from personal experience and professional observation. Our founder, witnessing the struggles of families accessing quality therapy services for their loved ones with disabilities, recognized a critical gap in the healthcare system.</p>
+                                <p>The name "Tolexars" combines "Therapy" and "Excellence" - reflecting our commitment to delivering exceptional care while helping individuals excel beyond their limitations.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Timeline Item 2 -->
+                    <div class="timeline-item">
+                        <div class="timeline-date">2023</div>
+                        <div class="timeline-content">
+                            <div class="timeline-image">
+                                <img src="assets/img/first.jpg" alt="First community outreach" loading="lazy">
+                            </div>
+                            <div class="timeline-text">
+                                <h3>First Community Outreach</h3>
+                                <p>We launched our first community outreach program in Ogba, Lagos, providing free assessments and therapy sessions to 50 children with developmental challenges. The overwhelming response confirmed the urgent need for our services.</p>
+                                <p>This pilot program became the blueprint for our Community Outreach initiative, now serving thousands across multiple states.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Timeline Item 3 -->
+                    <div class="timeline-item">
+                        <div class="timeline-date">2024</div>
+                        <div class="timeline-content">
+                            <div class="timeline-image">
+                                <img src="assets/img/assess.jpg" alt="Partnership formation" loading="lazy">
+                            </div>
+                            <div class="timeline-text">
+                                <h3>Strategic Partnerships Formed</h3>
+                                <p>Recognizing that collaboration amplifies impact, we formed partnerships with the Osteogenesis Imperfecta Foundation Network, Down Syndrome Foundation Nigeria, and Super Parents Foundation.</p>
+                                <p>These partnerships enabled us to extend our reach, share resources, and develop specialized programs for specific disability groups.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Timeline Item 4 -->
+                    <div class="timeline-item">
+                        <div class="timeline-date">2025</div>
+                        <div class="timeline-content">
+                            <div class="timeline-image">
+                                <img src="assets/img/oifn.jpg" alt="Growth and expansion" loading="lazy">
+                            </div>
+                            <div class="timeline-text">
+                                <h3>Expansion & Recognition</h3>
+                                <p>Our services expanded to include interstate outreach, reaching communities in Edo and Ogun states. We introduced our subsidized therapy program, making professional care accessible to low-income families.</p>
+                                <p>The organization grew from a team of 3 to over 20 licensed therapists and support staff, each sharing our passion for inclusive care.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Timeline Item 5 -->
+                    <div class="timeline-item">
+                        <div class="timeline-date">Today</div>
+                        <div class="timeline-content">
+                            <div class="timeline-image">
+                                <img src="assets/img/reach.jpg" alt="Present day impact" loading="lazy">
+                            </div>
+                            <div class="timeline-text">
+                                <h3>Ongoing Impact</h3>
+                                <p>Today, Tolexars stands as a beacon of hope for individuals with disabilities and their families. We've touched over 700 lives, conducted 13 major community outreaches, and continue to innovate our service delivery.</p>
+                                <p>Our journey continues with renewed commitment to breaking barriers and creating a more inclusive society where everyone can thrive.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        
+        <!-- Simple Video Section - Add before mission-vision-expanded -->
+<section class="simple-video-section section">
+    <div class="container">
+        <!-- Simple Video Player -->
+        <div class="simple-video-container">
+            <div class="simple-video-wrapper">
+                <!-- Video Preview -->
+                <div class="simple-video-preview" id="simpleVideoPreview">
+                    <img src="assets/img/first.jpg" alt="Play Tolexars Story Video" class="simple-video-thumbnail">
+                    <div class="simple-play-overlay">
+                        <button class="simple-play-button" id="simplePlayButton">
+                            <i class="fas fa-play"></i>
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Video Player -->
+                <div class="simple-video-player" id="simpleVideoPlayer">
+                    <video id="simpleAboutVideo" controls>
+                        <source src="assets/videos/about-video.mp4" type="video/mp4">
+                        <source src="assets/videos/about-video.webm" type="video/webm">
+                        Your browser does not support the video tag.
+                    </video>
+                    <button class="simple-close-video" id="simpleCloseVideo">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+        
+        
+
+        <!--===== MISSION & VISION EXPANDED =====-->
+        <section class="mission-vision-expanded section" id="mission-vision">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Our Guiding Principles</h2>
+                    <p class="section-subtitle">The foundation of everything we do</p>
+                </div>
+
+                <div class="mv-expanded__container bd-grid">
+                    <!-- Mission Card -->
+                    <div class="mv-card mission-card">
+                        <div class="mv-card__header">
+                            <div class="mv-icon">
+                                <i class="fas fa-bullseye"></i>
+                            </div>
+                            <h3>Our Mission</h3>
+                        </div>
+                        <div class="mv-card__body">
+                            <p>To empower individuals with disabilities through accessible, comprehensive therapy services while advocating for inclusion and driving systemic change through strategic partnerships and community engagement.</p>
+                            
+                            <div class="mission-details">
+                                <h4>Core Objectives:</h4>
+                                <ul class="mission-list">
+                                    
+                                    <li>
+                                        <i class="fas fa-check-circle"></i>
+                                        <span>Empowering individuals with disabilities through accessible support</span>
+                                    </li>
+                                    <li>
+                                        <i class="fas fa-check-circle"></i>
+                                        <span>Provide affordable, quality therapy services to underserved communities</span>
+                                    </li>
+                                    <li>
+                                        <i class="fas fa-check-circle"></i>
+                                        <span>Advocating for inclusion and driving positive change</span>
+                                    </li>
+                                    <li>
+                                        <i class="fas fa-check-circle"></i>
+                                        <span>Bridging resource gaps for an inclusive community</span>
+                                    </li>
+                                    <li>
+                                        <i class="fas fa-check-circle"></i>
+                                        <span>Foster collaborative partnerships to maximize impact</span>
+                                    </li>
+                                    
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Vision Card -->
+                    <div class="mv-card vision-card">
+                        <div class="mv-card__header">
+                            <div class="mv-icon">
+                                <i class="fas fa-eye"></i>
+                            </div>
+                            <h3>Our Vision</h3>
+                        </div>
+                        <div class="mv-card__body">
+                            <p>We exist to reach out to people living with disabilities across all institutions through strategic partnerships and collaborations with foundations, schools, and health facilities, creating a world where everyone has access to the support they need.</p>
+                            
+                            <div class="vision-details">
+                                <h4>Future Goals (2025-2030):</h4>
+                                <div class="vision-goals">
+                                    <div class="vision-goal">
+                                        <div class="goal-year">2026</div>
+                                        <div class="goal-text">Expand services to 5 additional states</div>
+                                    </div>
+                                    <div class="vision-goal">
+                                        <div class="goal-year">2027</div>
+                                        <div class="goal-text">Expand services to 10 additional states & Establish a dedicated therapy centers in 5 states</div>
+                                    </div>
+                                    <div class="vision-goal">
+                                        <div class="goal-year">2028</div>
+                                        <div class="goal-text">Reach 5,000+ lives directly through our programs</div>
+                                    </div>
+                                    <div class="vision-goal">
+                                        <div class="goal-year">2030</div>
+                                        <div class="goal-text">Become the leading therapy service provider in Nigeria</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!--===== OUR VALUES =====-->
+        <section class="our-values section" id="values">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title2">Our Core Values</h2>
+                    <p class="section-subtitle">The principles that guide every decision and action</p>
+                </div>
+
+                <div class="values-grid">
+                    <div class="value-card">
+                        <div class="value-icon">
+                            <i class="fas fa-heart"></i>
+                        </div>
+                        <h3>Compassion</h3>
+                        <p>We approach every individual with empathy, understanding their unique journey and providing care that respects their dignity and humanity.</p>
+                    </div>
+
+                    <div class="value-card">
+                        <div class="value-icon">
+                            <i class="fas fa-award"></i>
+                        </div>
+                        <h3>Excellence</h3>
+                        <p>We maintain the highest standards in therapy services, continually updating our knowledge and techniques to deliver exceptional results.</p>
+                    </div>
+
+                    <div class="value-card">
+                        <div class="value-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <h3>Inclusion</h3>
+                        <p>We believe in creating spaces where everyone feels valued and respected, regardless of ability, background, or circumstance.</p>
+                    </div>
+
+                    <div class="value-card">
+                        <div class="value-icon">
+                            <i class="fas fa-handshake"></i>
+                        </div>
+                        <h3>Collaboration</h3>
+                        <p>We work together with families, communities, and partners to create comprehensive support systems that maximize positive outcomes.</p>
+                    </div>
+
+                    <div class="value-card">
+                        <div class="value-icon">
+                            <i class="fas fa-lightbulb"></i>
+                        </div>
+                        <h3>Innovation</h3>
+                        <p>We embrace creative solutions and adapt our approaches to meet evolving needs and overcome challenges in therapy delivery.</p>
+                    </div>
+
+                    <div class="value-card">
+                        <div class="value-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h3>Integrity</h3>
+                        <p>We operate with transparency, honesty, and ethical standards in all our interactions and service delivery.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!--===== MEET THE TEAM =====-->
+        <section class="team-preview section" id="team">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Meet Our Leadership</h2>
+                    <p class="section-subtitle">The passionate professionals behind our impact</p>
+                </div>
+
+                <div class="team-grid">
+                    <div class="team-member">
+                        <div class="member-image">
+                            <img src="assets/img/team1.jpg" alt="Founder & CEO" loading="lazy">
+                        </div>
+                        <div class="member-info">
+                            <h3>Mr. Tolulope Adeoye</h3>
+                            <p class="member-role">Founder & CEO</p>
+                            <p class="member-bio">With almost a decadr of experience in occupational therapy, Dr. Adesina founded Tolexars to address the therapy gap she witnessed in underserved communities.</p>
+                            
+                        </div>
+                    </div>
+
+                    <div class="team-member">
+                        <div class="member-image">
+                            <img src="assets/img/team2.jpg" alt="Clinical Director" loading="lazy">
+                        </div>
+                        <div class="member-info">
+                            <h3>Dr. Chinedu Okoro</h3>
+                            <p class="member-role">Clinical Director</p>
+                            <p class="member-bio">Specializing in pediatric therapy, Dr. Okoro ensures all our clinical practices meet international standards while remaining culturally sensitive.</p>
+                            
+                        </div>
+                    </div>
+
+                    <div class="team-member">
+                        <div class="member-image">
+                            <img src="assets/img/team3.jpg" alt="Program Director" loading="lazy">
+                        </div>
+                        <div class="member-info">
+                            <h3>Mrs. Amina Yusuf</h3>
+                            <p class="member-role">Program Director</p>
+                            <p class="member-bio">With a background in public health, Mrs. Yusuf designs and implements our community outreach programs, ensuring maximum impact and sustainability.</p>
+                            
+                        </div>
+                    </div>
+                </div>
+
+                <div class="team-cta">
+                    <p>Our full team consists of 20+ licensed therapists, support staff, and dedicated volunteers.</p>
+                    <a href="team.html" class="button button--team">
+                        <i class="fas fa-users"></i>
+                        Meet Our Full Team
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!--===== ACHIEVEMENTS & MILESTONES =====-->
+        <section class="achievements section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Milestones & Recognition</h2>
+                    <p class="section-subtitle">Celebrating our journey of impact and growth</p>
+                </div>
+
+                <div class="achievements-container">
+                    
+                       
+
+                    <div class="achievement-card">
+                        <div class="achievement-icon">
+                            <i class="fas fa-handshake"></i>
+                        </div>
+                        <div class="achievement-content">
+                            <h3>Strategic Partnership with NTA</h3>
+                            <p>Featured on national television for our innovative approach to community-based therapy services.</p>
+                        </div>
+                    </div>
+
+                    <div class="achievement-card">
+                        <div class="achievement-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <div class="achievement-content">
+                            <h3>700+ Lives Transformed</h3>
+                            <p>Successfully provided therapy services to over 700 individuals across different age groups and conditions.</p>
+                        </div>
+                    </div>
+
+                    <div class="achievement-card">
+                        <div class="achievement-icon">
+                            <i class="fas fa-map-marked-alt"></i>
+                        </div>
+                        <div class="achievement-content">
+                            <h3>Multi-State Expansion</h3>
+                            <p>Successfully expanded our outreach programs to 3 states, bridging the therapy gap in underserved regions.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!--===== CALL TO ACTION =====-->
+        <section class="about-cta section">
+            <div class="container">
+                <div class="about-cta__content">
+                    <h2>Join Us in Making a Difference</h2>
+                    <p>Whether you're seeking therapy services, looking to volunteer, or interested in partnership opportunities, there's a place for you in the Tolexars family.</p>
+                    
+                    <div class="cta-buttons">
+                        <a href="index.html#contact" class="button button--primary">
+                            <i class="fas fa-calendar-check"></i>
+                            Schedule a Consultation
+                        </a>
+                        <a href="volunteer.html" class="button button--secondary">
+                            <i class="fas fa-hands-helping"></i>
+                            Become a Volunteer
+                        </a>
+                        <a href="index.html#partners" class="button button--tertiary">
+                            <i class="fas fa-handshake"></i>
+                            Partner With Us
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!--===== FOOTER =====-->
+    <footer class="footer">
+        <div class="footer__container bd-grid">
+            <div class="footer__data">
+                <h2 class="footer__title">Finding independence in every action: That's the heart we have at Tolexars Therapy Services</h2>
+                <p class="footer__description">Providing quality therapy services to enhance your well-being.</p>
+            </div>
+
+            <div class="footer__data">
+                <h2 class="footer__subtitle">Contact Us</h2>
+                <p class="footer__info"><i class='bx bx-phone footer__icon-info'></i> +234 9065038786</p>
+                <p class="footer__info"><i class='bx bx-envelope footer__icon-info'></i> tolexars@gmail.com</p>
+                <p class="footer__info"><i class='bx bx-map footer__icon-info'></i> 44, shonola street, Lagos, Nigeria</p>
+            </div>
+
+            <div class="footer__data">
+                <h2 class="footer__subtitle">Follow Us</h2>
+                <div class="footer__social">
+                    <a href="https://www.facebook.com/share/1669J4bzt3/" class="footer__icon"><i class='bx bxl-facebook' ></i></a>
+                    <a href="https://www.instagram.com/itzz_deoye?igsh=bzdmbDNwdTRqZjEw" class="footer__icon"><i class='bx bxl-instagram' ></i></a>
+                    <a href="https://wa.me/qr/X2VUA2MGDJLLO1" class="footer__icon"><i class='bx bxl-whatsapp' ></i></a>
+                    <a href="https://github.com/Tolexars" class="footer__icon"><i class='bx bxl-tiktok' ></i></a>
+                </div>
+            </div>
+
+            <div class="footer__data">
+                <h2 class="footer__subtitle">Quick Links</h2>
+                <ul>
+                    <li><a href="index.html" class="footer__link">Home</a></li>
+                    <li><a href="about.html" class="footer__link">About Us</a></li>
+                    <li><a href="gallery.html" class="footer__link">Gallery</a></li>
+                    <li><a href="shop.html" class="footer__link">Marketplace</a></li>
+                    <li><a href="testimonials.html" class="footer__link">Testimonials</a></li>
+                    <li><a href="team.html" class="footer__link">Our team</a></li>
+                    <li><a href="privacy-policy.html" class="footer__link">Privacy Policy</a></li>
+                    <li><a href="terms-of-service.html" class="footer__link">Terms of Service</a></li>
+                </ul>
+            </div>
+        </div>
+        <p class="footer__copy">&#169; 2025 Tolexars Therapy Services. All rights reserved.</p>
+        <p class="footer__copy">Designed by Duke and Vince Studios</p>
+    </footer>
+
+    <!--===== SCROLL REVEAL =====-->
+    <script src="https://unpkg.com/scrollreveal"></script>
+    
+    <!--===== MAIN JS =====-->
+    <script src="assets/js/main.js"></script>
+    
+    <!--===== ABOUT JS =====-->
+    <script src="assets/js/about.js"></script>
+</body>
+</html>

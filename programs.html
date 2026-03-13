@@ -1,0 +1,885 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Link to existing styles -->
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <!-- Programs page specific styles -->
+    <link rel="stylesheet" href="assets/css/program.css">
+    
+    <!-- Existing icons -->
+    <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    
+    <script>
+    // Debug script
+    document.addEventListener('DOMContentLoaded', function() {
+        console.log('DOM loaded - checking elements...');
+        
+        // Check if main elements exist
+        console.log('Navigation links:', document.querySelectorAll('.program-nav__link').length);
+        console.log('Contact form:', document.getElementById('programContactForm'));
+        console.log('Counters:', document.querySelectorAll('.stat-number, .metric-value').length);
+        
+        // Check if program.js loaded
+        console.log('Program.js should be loaded now');
+    });
+</script>
+    
+    <title>Our Programs - Tolexars Therapy Services</title>
+</head>
+<body>
+    <!--===== HEADER =====-->
+    <header class="l-header">
+        <nav class="nav bd-grid">
+            <div class="container">
+                <a href="index.html">
+                    <img src="assets/img/brand.png" alt="Tolexars logo" class="logo">
+                </a>
+            </div>
+
+            <div class="nav__menu" id="nav-menu">
+                <ul class="nav__list">
+                    <li class="nav__item"><a href="index.html" class="nav__link">Home</a></li>
+                    
+                    <!-- About Dropdown -->
+                    <li class="nav__item nav__item--dropdown">
+                        <a href="#" class="nav__link dropdown-toggle">
+                            About Us <i class='bx bx-chevron-down dropdown-icon'></i>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="about.html" class="dropdown-item">Our Story</a></li>
+                            <li><a href="about.html#mission-vision" class="dropdown-item">Mission & Vision</a></li>
+                            <li><a href="team.html" class="dropdown-item">Our Team</a></li>
+                        </ul>
+                    </li>
+                    
+                    <!-- Services Dropdown -->
+                    <li class="nav__item nav__item--dropdown active">
+                        <a href="#" class="nav__link dropdown-toggle active-link">
+                            Our Work <i class='bx bx-chevron-down dropdown-icon'></i>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="index.html#work" class="dropdown-item">Our Services</a></li>
+                            <li><a href="programs.html" class="dropdown-item active-link">Our Programs</a></li>
+                            <li><a href="gallery.html" class="dropdown-item">Gallery</a></li>
+                            <li><a href="testimonials.html" class="dropdown-item">Testimonials</a></li>
+                        </ul>
+                    </li>
+                    
+                    <!-- Get Involved Dropdown -->
+                    <li class="nav__item nav__item--dropdown">
+                        <a href="#" class="nav__link dropdown-toggle">
+                            Get Involved <i class='bx bx-chevron-down dropdown-icon'></i>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="volunteer.html" class="dropdown-item">Volunteer</a></li>
+                            <li><a href="professional-registration.html" class="dropdown-item">Join as Professional</a></li>
+                            <li><a href="index.html#partners" class="dropdown-item">Partnership</a></li>
+                        </ul>
+                    </li>
+                    
+                    <li class="nav__item"><a href="index.html#contact" class="nav__link">Contact</a></li>
+                </ul>
+                
+                <!-- Mobile Menu Close Button -->
+                <div class="nav__close" id="nav-close">
+                    <i class='bx bx-x'></i>
+                </div>
+            </div>
+
+            <!-- Mobile Menu Overlay -->
+            <div class="nav__overlay" id="nav-overlay"></div>
+
+            <div class="nav__toggle" id="nav-toggle">
+                <i class='bx bx-menu'></i>
+            </div>
+        </nav>
+    </header>
+
+    <main class="l-main">
+        
+        <!--===== PROGRAMS HERO =====-->
+        <section class="programs-hero section">
+            <div class="container">
+                <div class="programs-hero__content">
+                    <div class="hero-text">
+                        <h1 class="programs-hero__title"> <span class="hero-highlight">Transformative</span> Our Programs</h1>
+                        <p class="programs-hero__subtitle">Comprehensive therapy programs designed to meet diverse needs and create lasting impact across communities.</p>
+                    </div>
+                    <div class="hero-image-container">
+                        <img src="assets/img/first.jpg" alt="Therapy Programs at Tolexars" class="programs-hero__image">
+                        <div class="hero-stats">
+                            <div class="hero-stat">
+                                <div class="stat-icon">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                </div>
+                                <div class="stat-content">
+                                    <span class="stat-number" data-count="13">0</span>
+                                    <span class="metric-label">Communities Served</span>
+                                </div>
+                            </div>
+                            <div class="hero-stat">
+                                <div class="stat-icon">
+                                    <i class="fas fa-users"></i>
+                                </div>
+                                <div class="stat-content">
+                                    <span class="stat-number" data-count="700">0</span>
+                                    <span class="metric-label">Lives Impacted</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+       
+
+        <!--===== PROGRAM CARDS OVERVIEW =====-->
+        <section class="programs-overview section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Our Core Programs</h2>
+                    <p class="section-subtitle">Four distinct initiatives working together to create comprehensive impact</p>
+                </div>
+                
+                <div class="programs-grid">
+                    <!-- Community Outreach Card -->
+                    <div class="program-card" data-program="community">
+                        <div class="card-header">
+                            <div class="card-icon">
+                                <i class="fas fa-hands-helping"></i>
+                            </div>
+                            <h3>Community Outreach</h3>
+                            <span class="card-category">Accessibility Program</span>
+                        </div>
+                        <div class="card-body">
+                            <p>Bringing therapy services directly to underserved communities through mobile units and local partnerships.</p>
+                            <div class="card-stats">
+                                <div class="card-stat">
+                                    <span class="metric-value">11</span>
+                                    <span class="metric-label">Communities</span>
+                                </div>
+                                <div class="card-stat">
+                                    <span class="metric-value">300+</span>
+                                    <span class="metric-label">Sessions</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <a href="#community-outreach" class="card-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                    
+                    <!-- Subsidized Therapy Card -->
+                    <div class="program-card" data-program="subsidized">
+                        <div class="card-header">
+                            <div class="card-icon">
+                                <i class="fas fa-hand-holding-heart"></i>
+                            </div>
+                            <h3>Subsidized Therapy</h3>
+                            <span class="card-category">Financial Support</span>
+                        </div>
+                        <div class="card-body">
+                            <p>Making therapy affordable for families through sliding-scale fees and financial assistance programs.</p>
+                            <div class="card-stats">
+                                <div class="card-stat">
+                                    <span class="metric-value">60+</span>
+                                    <span class="metric-label">Families</span>
+                                </div>
+                                <div class="card-stat">
+                                    <span class="metric-value">70%</span>
+                                    <span class="metric-label">Cost Reduction</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <a href="#subsidized-therapy" class="card-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                    
+                    <!-- Mass Assessment Card -->
+                    <div class="program-card" data-program="assessment">
+                        <div class="card-header">
+                            <div class="card-icon">
+                                <i class="fas fa-clipboard-check"></i>
+                            </div>
+                            <h3>Mass Assessment</h3>
+                            <span class="card-category">Screening Program</span>
+                        </div>
+                        <div class="card-body">
+                            <p>Early detection through comprehensive screenings in schools and community centers for timely intervention.</p>
+                            <div class="card-stats">
+                                <div class="card-stat">
+                                    <span class="metric-value">700+</span>
+                                    <span class="metric-label">Assessments</span>
+                                </div>
+                                <div class="card-stat">
+                                    <span class="metric-value">45</span>
+                                    <span class="metric-label">Early Interventions</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <a href="#mass-assessment" class="card-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                    
+                    <!-- Inter-state Outreach Card -->
+                    <div class="program-card" data-program="interstate">
+                        <div class="card-header">
+                            <div class="card-icon">
+                                <i class="fas fa-map-marked-alt"></i>
+                            </div>
+                            <h3>Inter-state Outreach</h3>
+                            <span class="card-category">Expansion Program</span>
+                        </div>
+                        <div class="card-body">
+                            <p>Extending our services beyond Lagos to reach underserved communities across multiple states.</p>
+                            <div class="card-stats">
+                                <div class="card-stat">
+                                    <span class="metric-value">3</span>
+                                    <span class="metric-label">States</span>
+                                </div>
+                                <div class="card-stat">
+                                    <span class="metric-value">8</span>
+                                    <span class="metric-label">Camps</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <a href="#interstate-outreach" class="card-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!--===== DETAILED PROGRAM SECTIONS =====-->
+        
+        <!-- Community Outreach -->
+        <section class="program-detail section" id="community-outreach">
+            <div class="container">
+                <div class="program-header">
+                    <div class="program-badge">
+                        <i class="fas fa-hands-helping"></i>
+                        <span>Accessibility Program</span>
+                    </div>
+                    <h2 class="program-title">Community Outreach</h2>
+                    <p class="program-tagline">Bringing therapy services directly to underserved communities</p>
+                </div>
+
+                <div class="program-content">
+                    <div class="program-media">
+                        <div class="program-image">
+                            <img src="assets/img/first.jpg" alt="Community Outreach Program" loading="lazy">
+                        </div>
+                        <div class="program-video-placeholder">
+                            <div class="video-icon">
+                                <i class="fas fa-play-circle"></i>
+                            </div>
+                            <p>Watch our community outreach in action</p>
+                        </div>
+                    </div>
+                    
+                    <div class="program-info">
+                        <div class="info-section">
+                            <h3><i class="fas fa-bullseye"></i> Program Overview</h3>
+                            <p>Our Community Outreach program breaks down geographical barriers to therapy access. We bring essential services directly to communities, schools, and local centers through mobile units and strategic partnerships.</p>
+                        </div>
+                        
+                        <div class="info-section">
+                            <h3><i class="fas fa-check-circle"></i> Key Features</h3>
+                            <ul class="feature-list">
+                                <li><i class="fas fa-mobile-alt"></i> Mobile therapy units for remote areas</li>
+                                <li><i class="fas fa-chalkboard-teacher"></i> Regular workshops and training sessions</li>
+                                <li><i class="fas fa-handshake"></i> Partnerships with local community centers</li>
+                                <li><i class="fas fa-stethoscope"></i> Free screening and awareness campaigns</li>
+                                <li><i class="fas fa-user-graduate"></i> Caregiver training programs</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="info-section">
+                            <h3><i class="fas fa-chart-line"></i> Impact Metrics</h3>
+                            <div class="metrics-grid">
+                                <div class="metric">
+                                    <div class="metric-value" data-count="11">0</div>
+                                    <div class="metric-label">Communities Reached</div>
+                                </div>
+                                <div class="metric">
+                                    <div class="metric-value" data-count="300">0+</div>
+                                    <div class="metric-label">Free Sessions</div>
+                                </div>
+                                <div class="metric">
+                                    <div class="metric-value" data-count="85">0%</div>
+                                    <div class="metric-label">Satisfaction Rate</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-cta">
+                            <div class="cta-content">
+                                <h4><i class="fas fa-comments"></i> Bring Services to Your Community</h4>
+                                <p>Request our outreach team to visit your community, school, or organization.</p>
+                                <a href="#contact-form" class="btn-primary">
+                                    <i class="fas fa-calendar-alt"></i>
+                                    Schedule a Visit
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Subsidized Therapy -->
+        <section class="program-detail section alt-bg" id="subsidized-therapy">
+            <div class="container">
+                <div class="program-header">
+                    <div class="program-badge">
+                        <i class="fas fa-hand-holding-heart"></i>
+                        <span>Financial Support</span>
+                    </div>
+                    <h2 class="program-title">Subsidized Therapy</h2>
+                    <p class="program-tagline">Affordable care for those facing financial challenges</p>
+                </div>
+
+                <div class="program-content reverse">
+                    <div class="program-info">
+                        <div class="info-section">
+                            <h3><i class="fas fa-bullseye"></i> Program Overview</h3>
+                            <p>Financial constraints should never prevent access to quality therapy. Our program offers sliding-scale fees and completely free sessions based on individual financial assessments.</p>
+                        </div>
+                        
+                        <div class="info-section">
+                            <h3><i class="fas fa-check-circle"></i> Key Features</h3>
+                            <ul class="feature-list">
+                                <li><i class="fas fa-money-bill-wave"></i> Income-based sliding scale fees</li>
+                                <li><i class="fas fa-heart"></i> Free sessions for extreme cases</li>
+                                <li><i class="fas fa-calendar-alt"></i> Flexible payment plans</li>
+                                <li><i class="fas fa-file-invoice-dollar"></i> Insurance coordination assistance</li>
+                                <li><i class="fas fa-cogs"></i> Equipment lending program</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="info-section">
+                            <h3><i class="fas fa-chart-line"></i> Impact Metrics</h3>
+                            <div class="metrics-grid">
+                                <div class="metric">
+                                    <div class="metric-value" data-count="60">0+</div>
+                                    <div class="metric-label">Families Supported</div>
+                                </div>
+                                <div class="metric">
+                                    <div class="metric-value" data-count="70">0%</div>
+                                    <div class="metric-label">Cost Reduction</div>
+                                </div>
+                                <div class="metric">
+                                    <div class="metric-value" data-count="92">0%</div>
+                                    <div class="metric-label">Continuation Rate</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-cta">
+                            <div class="cta-content">
+                                <h4><i class="fas fa-handshake"></i> Need Financial Support?</h4>
+                                <p>Apply for subsidized therapy services tailored to your financial situation.</p>
+                                <a href="#contact-form" class="btn-primary">
+                                    <i class="fas fa-file-alt"></i>
+                                    Apply Now
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="program-media">
+                        <div class="program-image">
+                            <img src="assets/img/therapy.jpg" alt="Subsidized Therapy Program" loading="lazy">
+                        </div>
+                        <div class="program-testimonial">
+                            <div class="testimonial-icon">
+                                <i class="fas fa-quote-left"></i>
+                            </div>
+                            <p>"The subsidized program made therapy possible for our son. We're forever grateful."</p>
+                            <span>- Mrs. Chinwe, Parent</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Mass Assessment -->
+        <section class="program-detail section" id="mass-assessment">
+            <div class="container">
+                <div class="program-header">
+                    <div class="program-badge">
+                        <i class="fas fa-clipboard-check"></i>
+                        <span>Screening Program</span>
+                    </div>
+                    <h2 class="program-title">Mass Assessment</h2>
+                    <p class="program-tagline">Early detection for timely intervention</p>
+                </div>
+
+                <div class="program-content">
+                    <div class="program-media">
+                        <div class="program-image">
+                            <img src="assets/img/assess.jpg" alt="Mass Assessment Program" loading="lazy">
+                        </div>
+                        <div class="program-stats">
+                            <div class="stat-item">
+                                <div class="stat-number">700+</div>
+                                <div class="stat-text">Assessments Conducted</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-number">15</div>
+                                <div class="stat-text">Partner Institutions</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="program-info">
+                        <div class="info-section">
+                            <h3><i class="fas fa-bullseye"></i> Program Overview</h3>
+                            <p>Early detection is key to effective intervention. We conduct large-scale screenings in schools and community centers to identify developmental challenges at their earliest stages.</p>
+                        </div>
+                        
+                        <div class="info-section">
+                            <h3><i class="fas fa-check-circle"></i> Key Features</h3>
+                            <ul class="feature-list">
+                                <li><i class="fas fa-search"></i> Comprehensive developmental screenings</li>
+                                <li><i class="fas fa-users"></i> Multi-disciplinary assessment teams</li>
+                                <li><i class="fas fa-file-medical"></i> Detailed evaluation reports</li>
+                                <li><i class="fas fa-phone-alt"></i> Follow-up consultation services</li>
+                                <li><i class="fas fa-road"></i> Clear referral pathways</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="info-section">
+                            <h3><i class="fas fa-chart-line"></i> Impact Metrics</h3>
+                            <div class="metrics-grid">
+                                <div class="metric">
+                                    <div class="metric-value" data-count="700">0+</div>
+                                    <div class="metric-label">Assessments</div>
+                                </div>
+                                <div class="metric">
+                                    <div class="metric-value" data-count="45">0</div>
+                                    <div class="metric-label">Early Interventions</div>
+                                </div>
+                                <div class="metric">
+                                    <div class="metric-value" data-count="95">0%</div>
+                                    <div class="metric-label">Accuracy Rate</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-cta">
+                            <div class="cta-content">
+                                <h4><i class="fas fa-school"></i> Schedule an Assessment</h4>
+                                <p>Schools and institutions can request our assessment services for their members.</p>
+                                <a href="#contact-form" class="btn-primary">
+                                    <i class="fas fa-clipboard-list"></i>
+                                    Request Service
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Inter-state Outreach -->
+        <section class="program-detail section alt-bg" id="interstate-outreach">
+            <div class="container">
+                <div class="program-header">
+                    <div class="program-badge">
+                        <i class="fas fa-map-marked-alt"></i>
+                        <span>Expansion Program</span>
+                    </div>
+                    <h2 class="program-title">Inter-state Outreach</h2>
+                    <p class="program-tagline">Extending our impact beyond geographical boundaries</p>
+                </div>
+
+                <div class="program-content reverse">
+                    <div class="program-info">
+                        <div class="info-section">
+                            <h3><i class="fas fa-bullseye"></i> Program Overview</h3>
+                            <p>Bridging the therapy gap across regions, we conduct therapy camps, training sessions, and establish support networks to ensure consistent access to quality therapy services across multiple states.</p>
+                        </div>
+                        
+                        <div class="info-section">
+                            <h3><i class="fas fa-check-circle"></i> Key Features</h3>
+                            <ul class="feature-list">
+                                <li><i class="fas fa-campground"></i> State-wide therapy camps</li>
+                                <li><i class="fas fa-graduation-cap"></i> Professional training for local therapists</li>
+                                <li><i class="fas fa-video"></i> Tele-therapy consultation services</li>
+                                <li><i class="fas fa-share-alt"></i> Resource sharing networks</li>
+                                <li><i class="fas fa-handshake"></i> Cross-state partnerships</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="info-section">
+                            <h3><i class="fas fa-chart-line"></i> Impact Metrics</h3>
+                            <div class="metrics-grid">
+                                <div class="metric">
+                                    <div class="metric-value" data-count="3">0</div>
+                                    <div class="metric-label">States Covered</div>
+                                </div>
+                                <div class="metric">
+                                    <div class="metric-value" data-count="8">0</div>
+                                    <div class="metric-label">Outreach Camps</div>
+                                </div>
+                                <div class="metric">
+                                    <div class="metric-value" data-count="25">0+</div>
+                                    <div class="metric-label">Therapists Trained</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-cta">
+                            <div class="cta-content">
+                                <h4><i class="fas fa-map-pin"></i> Bring Services to Your State</h4>
+                                <p>Request our inter-state outreach program for your community or state.</p>
+                                <a href="#contact-form" class="btn-primary">
+                                    <i class="fas fa-location-arrow"></i>
+                                    Request Outreach
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="program-media">
+                        <div class="program-image">
+                            <img src="assets/img/inter.jpg" alt="Inter-state Outreach Program" loading="lazy">
+                        </div>
+                        <div class="program-locations">
+                            <h4><i class="fas fa-map-marker-alt"></i> Current Coverage</h4>
+                            <ul class="locations-list">
+                                <li><i class="fas fa-check-circle"></i> Lagos State</li>
+                                <li><i class="fas fa-check-circle"></i> Ogun State</li>
+                                <li><i class="fas fa-check-circle"></i> Ondo State</li>
+                                <li><i class="fas fa-check-circle"></i> Delta State</li>
+                                <li><i class="fas fa-plus-circle"></i> More states coming soon</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!--===== PROGRAM COMPARISON =====-->
+        <section class="program-comparison section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Compare Programs</h2>
+                    <p class="section-subtitle">Find the perfect fit for your needs</p>
+                </div>
+
+                <div class="comparison-cards">
+                    <div class="comparison-card">
+                        <div class="comparison-header">
+                            <h3>Community Outreach</h3>
+                            <div class="comparison-badge">Accessibility</div>
+                        </div>
+                        <div class="comparison-body">
+                            <div class="comparison-point">
+                                <i class="fas fa-users"></i>
+                                <span>Underserved Communities</span>
+                            </div>
+                            <div class="comparison-point">
+                                <i class="fas fa-clock"></i>
+                                <span>Ongoing</span>
+                            </div>
+                            <div class="comparison-point">
+                                <i class="fas fa-money-bill-wave"></i>
+                                <span>Free</span>
+                            </div>
+                        </div>
+                        <div class="comparison-footer">
+                            <a href="#community-outreach" class="comparison-link">
+                                Learn More <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="comparison-card">
+                        <div class="comparison-header">
+                            <h3>Subsidized Therapy</h3>
+                            <div class="comparison-badge">Financial</div>
+                        </div>
+                        <div class="comparison-body">
+                            <div class="comparison-point">
+                                <i class="fas fa-user-friends"></i>
+                                <span>Low-income Families</span>
+                            </div>
+                            <div class="comparison-point">
+                                <i class="fas fa-clock"></i>
+                                <span>Long-term</span>
+                            </div>
+                            <div class="comparison-point">
+                                <i class="fas fa-money-bill-wave"></i>
+                                <span>Sliding Scale</span>
+                            </div>
+                        </div>
+                        <div class="comparison-footer">
+                            <a href="#subsidized-therapy" class="comparison-link">
+                                Apply Now <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="comparison-card">
+                        <div class="comparison-header">
+                            <h3>Mass Assessment</h3>
+                            <div class="comparison-badge">Screening</div>
+                        </div>
+                        <div class="comparison-body">
+                            <div class="comparison-point">
+                                <i class="fas fa-school"></i>
+                                <span>Schools & Institutions</span>
+                            </div>
+                            <div class="comparison-point">
+                                <i class="fas fa-clock"></i>
+                                <span>Short-term</span>
+                            </div>
+                            <div class="comparison-point">
+                                <i class="fas fa-money-bill-wave"></i>
+                                <span>Free/Subsidized</span>
+                            </div>
+                        </div>
+                        <div class="comparison-footer">
+                            <a href="#mass-assessment" class="comparison-link">
+                                Schedule <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="comparison-card">
+                        <div class="comparison-header">
+                            <h3>Inter-state Outreach</h3>
+                            <div class="comparison-badge">Expansion</div>
+                        </div>
+                        <div class="comparison-body">
+                            <div class="comparison-point">
+                                <i class="fas fa-map"></i>
+                                <span>Other States</span>
+                            </div>
+                            <div class="comparison-point">
+                                <i class="fas fa-clock"></i>
+                                <span>Project-based</span>
+                            </div>
+                            <div class="comparison-point">
+                                <i class="fas fa-money-bill-wave"></i>
+                                <span>Free/Sponsored</span>
+                            </div>
+                        </div>
+                        <div class="comparison-footer">
+                            <a href="#interstate-outreach" class="comparison-link">
+                                Request <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!--===== PROGRAM CONTACT FORM =====-->
+        <section class="program-contact section" id="contact-form">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Start Your Journey With Us</h2>
+                    <p class="section-subtitle">Get in touch about any of our programs. We're here to help.</p>
+                </div>
+
+                <div class="contact-wrapper">
+                    <div class="contact-form-container">
+                        <form id="programContactForm" class="contact-form">
+                            <div class="form-group">
+                                <div class="input-icon">
+                                    <i class="fas fa-user"></i>
+                                </div>
+                                <input type="text" id="fullName" name="fullName" required placeholder="Your full name">
+                            </div>
+                            
+                            <div class="form-group">
+                                <div class="input-icon">
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                                <input type="email" id="email" name="email" required placeholder="Email address">
+                            </div>
+                            
+                            <div class="form-group">
+                                <div class="input-icon">
+                                    <i class="fas fa-phone"></i>
+                                </div>
+                                <input type="tel" id="phone" name="phone" required placeholder="Phone number">
+                            </div>
+                            
+                            <div class="form-group">
+                                <div class="input-icon">
+                                    <i class="fas fa-project-diagram"></i>
+                                </div>
+                                <select id="programInterest" name="programInterest" required>
+                                    <option value="">Select program of interest</option>
+                                    <option value="community-outreach">Community Outreach</option>
+                                    <option value="subsidized-therapy">Subsidized Therapy</option>
+                                    <option value="mass-assessment">Mass Assessment</option>
+                                    <option value="interstate-outreach">Inter-state Outreach</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <div class="input-icon">
+                                    <i class="fas fa-comment"></i>
+                                </div>
+                                <textarea id="message" name="message" required placeholder="Tell us about your needs..." rows="4"></textarea>
+                            </div>
+                            
+                            <button type="submit" class="submit-btn">
+                                <i class="fas fa-paper-plane"></i>
+                                Send Inquiry
+                            </button>
+                            
+                            <div class="form-note">
+                                <i class="fas fa-info-circle"></i>
+                                We'll respond within 24 hours
+                            </div>
+                        </form>
+                    </div>
+                    
+                    <div class="contact-info-container">
+                        <div class="contact-card">
+                            <div class="contact-card-header">
+                                <i class="fas fa-headset"></i>
+                                <h3>Need Immediate Help?</h3>
+                            </div>
+                            <div class="contact-card-body">
+                                <div class="contact-method">
+                                    <div class="method-icon">
+                                        <i class="fas fa-phone-alt"></i>
+                                    </div>
+                                    <div class="method-info">
+                                        <strong>Call Us</strong>
+                                        <a href="tel:+2349065038786">+234 906 503 8786</a>
+                                    </div>
+                                </div>
+                                
+                                <div class="contact-method">
+                                    <div class="method-icon">
+                                        <i class="fab fa-whatsapp"></i>
+                                    </div>
+                                    <div class="method-info">
+                                        <strong>WhatsApp</strong>
+                                        <a href="https://wa.me/2349065038786" target="_blank">Chat Now</a>
+                                    </div>
+                                </div>
+                                
+                                <div class="contact-method">
+                                    <div class="method-icon">
+                                        <i class="fas fa-envelope"></i>
+                                    </div>
+                                    <div class="method-info">
+                                        <strong>Email</strong>
+                                        <a href="mailto:tolexars@gmail.com">tolexars@gmail.com</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="info-tip">
+                            <div class="tip-icon">
+                                <i class="fas fa-lightbulb"></i>
+                            </div>
+                            <div class="tip-content">
+                                <h4>Not Sure Which Program?</h4>
+                                <p>Our team can help you choose the right program based on your specific needs.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!--===== FINAL CTA =====-->
+        <section class="final-cta section">
+            <div class="container">
+                <div class="final-cta-content">
+                    <h2>Ready to Make a Difference?</h2>
+                    <p>Join us in transforming lives through accessible therapy services. Whether you need our programs or want to support our mission, there's a place for you.</p>
+                    
+                    <div class="cta-buttons">
+                        <a href="#contact-form" class="cta-btn primary">
+                            <i class="fas fa-calendar-check"></i>
+                            Start a Program
+                        </a>
+                        <a href="volunteer.html" class="cta-btn secondary">
+                            <i class="fas fa-hands-helping"></i>
+                            Volunteer
+                        </a>
+                        <a href="index.html#partners" class="cta-btn tertiary">
+                            <i class="fas fa-handshake"></i>
+                            Partner With Us
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!--===== FOOTER =====-->
+    <footer class="footer">
+        <div class="footer__container bd-grid">
+            <div class="footer__data">
+                <h2 class="footer__title">Finding independence in every action: That's the heart we have at Tolexars Therapy Services</h2>
+                <p class="footer__description">Providing quality therapy services to enhance your well-being.</p>
+            </div>
+
+            <div class="footer__data">
+                <h2 class="footer__subtitle">Contact Us</h2>
+                <p class="footer__info"><i class='bx bx-phone footer__icon-info'></i> +234 9065038786</p>
+                <p class="footer__info"><i class='bx bx-envelope footer__icon-info'></i> tolexars@gmail.com</p>
+                <p class="footer__info"><i class='bx bx-map footer__icon-info'></i> 44, shonola street, Lagos, Nigeria</p>
+            </div>
+
+            <div class="footer__data">
+                <h2 class="footer__subtitle">Follow Us</h2>
+                <div class="footer__social">
+                    <a href="https://www.facebook.com/share/1669J4bzt3/" class="footer__icon"><i class='bx bxl-facebook' ></i></a>
+                    <a href="https://www.instagram.com/itzz_deoye?igsh=bzdmbDNwdTRqZjEw" class="footer__icon"><i class='bx bxl-instagram' ></i></a>
+                    <a href="https://wa.me/qr/X2VUA2MGDJLLO1" class="footer__icon"><i class='bx bxl-whatsapp' ></i></a>
+                    <a href="https://github.com/Tolexars" class="footer__icon"><i class='bx bxl-tiktok' ></i></a>
+                </div>
+            </div>
+
+            <div class="footer__data">
+                <h2 class="footer__subtitle">Quick Links</h2>
+                <ul>
+                    <li><a href="index.html" class="footer__link">Home</a></li>
+                    <li><a href="about.html" class="footer__link">About Us</a></li>
+                    <li><a href="programs.html" class="footer__link">Our Programs</a></li>
+                    <li><a href="gallery.html" class="footer__link">Gallery</a></li>
+                    <li><a href="testimonials.html" class="footer__link">Testimonials</a></li>
+                    <li><a href="team.html" class="footer__link">Our team</a></li>
+                    <li><a href="privacy-policy.html" class="footer__link">Privacy Policy</a></li>
+                    <li><a href="terms-of-service.html" class="footer__link">Terms of Service</a></li>
+                </ul>
+            </div>
+        </div>
+        <p class="footer__copy">&#169; 2025 Tolexars Therapy Services. All rights reserved.</p>
+        <p class="footer__copy">Designed by Duke and Vince Studios</p>
+    </footer>
+
+    <!--===== SCROLL REVEAL =====-->
+    <script src="https://unpkg.com/scrollreveal"></script>
+    
+    <!--===== MAIN JS =====-->
+    <script src="assets/js/main.js"></script>
+    
+    <!--===== PROGRAM JS =====-->
+    <script src="assets/js/program.js"></script>
+</body>
+</html>
