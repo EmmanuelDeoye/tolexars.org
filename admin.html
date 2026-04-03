@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Admin Dashboard - Tolexars Therapy Services</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/admin.css">
+    <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- html2canvas for certificate generation -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <!-- jsPDF for optional PDF -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+    <script src="assets/js/configure.js"></script>
+</head>
+<body>
+    <div class="admin-wrapper">
+        <!-- Passcode Overlay (hidden after success) -->
+        <div id="passcodeOverlay" class="passcode-overlay">
+            <div class="passcard">
+                <i class="fas fa-lock"></i>
+                <h2>Admin Access</h2>
+                <p>Enter passcode to continue</p>
+                <input type="password" id="passcodeInput" placeholder="Enter passcode" autocomplete="off">
+                <button id="verifyPasscodeBtn" class="button">Verify</button>
+                <div id="passcodeError" class="error-msg"></div>
+            </div>
+        </div>
+
+        <!-- Main Admin Content (hidden initially) -->
+        <div id="adminContent" style="display: none;">
+            <header class="admin-header">
+                <div class="admin-header__top">
+                    <img src="assets/img/brand.png" alt="logo" class="admin-logo">
+                    <h1>Volunteer Management</h1>
+                    <button id="logoutBtn" class="logout-btn"><i class="fas fa-sign-out-alt"></i> Logout</button>
+                </div>
+                <div class="tabs">
+                    <button class="tab-btn active" data-tab="pending">Pending Applications <span id="pendingCount">0</span></button>
+                    <button class="tab-btn" data-tab="approved">Approved Volunteers <span id="approvedCount">0</span></button>
+                </div>
+            </header>
+
+            <main class="admin-main">
+                <!-- Pending Applications List -->
+                <div id="pendingTab" class="tab-content active">
+                    <div class="search-box">
+                        <i class="fas fa-search"></i>
+                        <input type="text" id="searchPending" placeholder="Search by name, phone or email...">
+                    </div>
+                    <div id="pendingList" class="volunteer-cards-list">
+                        <div class="loading-spinner"><i class="fas fa-spinner fa-pulse"></i> Loading...</div>
+                    </div>
+                </div>
+
+                <!-- Approved Volunteers List -->
+                <div id="approvedTab" class="tab-content">
+                    <div class="search-box">
+                        <i class="fas fa-search"></i>
+                        <input type="text" id="searchApproved" placeholder="Search by name, phone or email...">
+                    </div>
+                    <div id="approvedList" class="volunteer-cards-list">
+                        <div class="loading-spinner"><i class="fas fa-spinner fa-pulse"></i> Loading...</div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <!-- Certificate Modal -->
+    <div id="certificateModal" class="certificate-modal">
+        <div class="certificate-modal__content">
+            <div class="certificate-modal__header">
+                <h3><i class="fas fa-certificate"></i> Award Certificate</h3>
+                <button class="certificate-modal__close">&times;</button>
+            </div>
+            <div class="certificate-modal__body">
+                <div class="certificate-preview-container">
+                    <div id="certificateTemplate" class="certificate-template portrait">
+                        <div class="certificate-bg">
+                            <div class="certificate-pattern"></div>
+                            <div class="certificate-border">
+                                <div class="certificate-inner">
+                                    <div class="certificate-header">
+                                        <div class="certificate-logo-area">
+                                            <img src="assets/img/brand.png" alt="Tolexars Logo" class="certificate-logo">
+                                            <div class="certificate-org-info">
+                                                <h3 class="certificate-org-name">Tolexars Therapy Services</h3>
+                                                <p class="certificate-tagline">Finding independence in every action</p>
+                                            </div>
+                                        </div>
+                                        <div class="certificate-number">
+                                            <span>No: <span id="certificateNumber">VOL-2025-001</span></span>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="certificate-title">
+                                        <h1>CERTIFICATE OF VOLUNTEERING</h1>
+                                        <div class="title-decoration">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-heart"></i>
+                                            <i class="fas fa-star"></i>
+                                        </div>
+                                    </div>
+                                    
+                                    <p class="certificate-presented">This certificate is proudly presented to</p>
+                                    <h2 id="certificateNameDisplay">Volunteer Name</h2>
+                                    
+                                    <p class="certificate-message">in recognition of their <strong>outstanding dedication</strong>, <strong>selfless service</strong>, and <strong>invaluable contribution</strong> to the mission of <strong>Tolexars Therapy Services</strong>.</p>
+                                    
+                                    <div class="certificate-details">
+                                        <div class="detail-item">
+                                            <i class="fas fa-calendar-alt"></i>
+                                            <span>Year of Service: <strong id="certificateYear">2025</strong></span>
+                                        </div>
+                                        <div class="detail-item">
+                                            <i class="fas fa-trophy"></i>
+                                            <span>Category: <strong>Volunteer Excellence</strong></span>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="certificate-quote">
+                                        <i class="fas fa-quote-left"></i>
+                                        <p>The best way to find yourself is to lose yourself in the service of others.</p>
+                                        <i class="fas fa-quote-right"></i>
+                                    </div>
+                                    
+                                    <div class="certificate-footer">
+                                        <div class="signature-area">
+                                            <div class="signature-line"></div>
+                                            <div class="signature-info">
+                                                <p class="signature-name">Mr. Tolexars</p>
+                                                <p class="signature-title">Executive Director</p>
+                                            </div>
+                                        </div>
+                                        <div class="date-area">
+                                            <div class="date-line"></div>
+                                            <div class="date-info">
+                                                <p class="issue-date">Issued on: <span id="certificateIssueDate">March 15, 2025</span></p>
+                                                <p class="validity">Valid for lifetime achievement</p>
+                                            </div>
+                                        </div>
+                                        <div class="seal-area">
+                                            <div class="certificate-seal">
+                                                <i class="fas fa-heart"></i>
+                                                <i class="fas fa-certificate"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="certificate-controls">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="volunteerNameInput"><i class="fas fa-user"></i> Volunteer's Full Name</label>
+                            <input type="text" id="volunteerNameInput" placeholder="Enter volunteer's name" class="certificate-input">
+                        </div>
+                        <div class="form-group">
+                            <label for="certificateNumberInput"><i class="fas fa-hashtag"></i> Certificate Number</label>
+                            <input type="text" id="certificateNumberInput" placeholder="e.g., VOL-2025-001" class="certificate-input">
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label><i class="fas fa-arrows-alt"></i> Certificate Orientation</label>
+                            <div class="orientation-buttons">
+                                <button type="button" id="portraitBtn" class="orientation-btn active"><i class="fas fa-mobile-alt"></i> Portrait</button>
+                                <button type="button" id="landscapeBtn" class="orientation-btn"><i class="fas fa-laptop"></i> Landscape</button>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label><i class="fas fa-file-alt"></i> Output Format</label>
+                            <select id="certificateFormat" class="certificate-select">
+                                <option value="image">Image (PNG) - High Quality</option>
+                                <option value="pdf">PDF Document - Print Ready</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="certificate-actions">
+                        <button id="previewCertBtn" class="btn-preview"><i class="fas fa-eye"></i> Preview</button>
+                        <button id="saveAndSendCertBtn" class="btn-send"><i class="fas fa-paper-plane"></i> Save & Send</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="assets/js/admin.js"></script>
+</body>
+</html>
